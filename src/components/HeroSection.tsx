@@ -17,7 +17,11 @@ function TypewriterHeadline({ parallax }: { parallax: number }) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    if (count >= FULL_TEXT.length) return;
+    if (count >= FULL_TEXT.length) {
+      // Pause briefly while the full line is visible, then restart from the top.
+      const t = setTimeout(() => setCount(0), 2600);
+      return () => clearTimeout(t);
+    }
     const speed = FULL_TEXT[count - 1] === " " ? 60 : 38;
     const t = setTimeout(() => setCount((c) => c + 1), speed);
     return () => clearTimeout(t);
