@@ -3,6 +3,61 @@ import { useScrollParallax } from "@/hooks/use-parallax";
 import { ArrowDown, ArrowRight, BrainCircuit, Camera, Database, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logoAsset from "@/assets/punto-vivo-logo.png.asset.json";
+import { useEffect, useState } from "react";
+
+const HEADLINE_SEGMENTS: { text: string; gradient: boolean }[] = [
+  { text: "Integrated Smart ", gradient: false },
+  { text: "Bulky-Waste Management", gradient: true },
+  { text: " for Bogotá", gradient: false },
+];
+
+const FULL_TEXT = HEADLINE_SEGMENTS.map((s) => s.text).join("");
+
+function TypewriterHeadline({ parallax }: { parallax: number }) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (count >= FULL_TEXT.length) return;
+    const speed = FULL_TEXT[count - 1] === " " ? 60 : 38;
+    const t = setTimeout(() => setCount((c) => c + 1), speed);
+    return () => clearTimeout(t);
+  }, [count]);
+
+  // Walk the segments, emitting only the characters revealed so far.
+  let remaining = count;
+  const parts: { text: string; gradient: boolean }[] = [];
+  for (const seg of HEADLINE_SEGMENTS) {
+    if (remaining <= 0) break;
+    const take = Math.min(remaining, seg.text.length);
+    parts.push({ text: seg.text.slice(0, take), gradient: seg.gradient });
+    remaining -= take;
+  }
+  const done = count >= FULL_TEXT.length;
+
+  return (
+    <h1
+      className="mx-auto mb-6 max-w-5xl text-4xl font-extrabold leading-[1.03] sm:text-5xl md:text-7xl"
+      style={{
+        transform: `translateY(${parallax}px)`,
+      }}
+    >
+      {parts.map((p, i) =>
+        p.gradient ? (
+          <span key={i} className="text-gradient-brand">{p.text}</span>
+        ) : (
+          <span key={i}>{p.text}</span>
+        )
+      )}
+      <span
+        className="inline-block w-[0.6ch] -ml-1 animate-pulse text-primary"
+        style={{ opacity: done ? 0 : 1, transition: "opacity 0.4s ease" }}
+        aria-hidden="true"
+      >
+        |
+      </span>
+    </h1>
+  );
+}
 
 const HeroSection = () => {
   const headlineParallax = useScrollParallax(0.08);
