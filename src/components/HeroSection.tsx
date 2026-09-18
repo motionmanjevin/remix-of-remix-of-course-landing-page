@@ -76,15 +76,9 @@ const HeroSection = () => {
             <span className="h-2 w-2 flex-shrink-0 animate-pulse rounded-full bg-primary" aria-hidden="true" />
             <span className="font-mono text-[11px] uppercase text-foreground">Bogotá · Intelligent waste operations</span>
           </div>
-          <h1 
-            className="mx-auto mb-6 max-w-5xl text-4xl font-extrabold leading-[1.03] opacity-0 sm:text-5xl md:text-7xl"
-            style={{ 
-              animation: 'heroFadeIn 0.7s ease-out 0.3s forwards',
-              transform: `translateY(${headlineParallax}px)`,
-            }}
-          >
-            Integrated Smart <span className="text-gradient-brand">Bulky-Waste Management</span> for Bogotá
-          </h1>
+          <div className="opacity-0" style={{ animation: 'heroFadeIn 0.5s ease-out 0.3s forwards' }}>
+            <TypewriterHeadline parallax={headlineParallax} />
+          </div>
           <p 
             className="mx-auto mb-9 max-w-2xl px-2 text-base leading-relaxed text-muted-foreground opacity-0 sm:text-lg md:text-xl"
             style={{ 
