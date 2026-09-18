@@ -34,9 +34,9 @@ const HeroLightRays = () => {
             transform: `translateX(-50%) rotate(-25deg) translateY(${scrollOffset * 0.3}px)`,
             background: `linear-gradient(
               to bottom,
-              hsl(24 95% 50% / 0.6) 0%,
-              hsl(24 95% 45% / 0.4) 30%,
-              hsl(24 95% 40% / 0.15) 60%,
+               hsl(var(--primary) / 0.42) 0%,
+               hsl(var(--accent) / 0.28) 30%,
+               hsl(var(--primary) / 0.10) 60%,
               transparent 100%
             )`,
             filter: 'blur(40px)',
@@ -52,9 +52,9 @@ const HeroLightRays = () => {
             transform: `translateX(-50%) rotate(-8deg) translateY(${scrollOffset * 0.2}px)`,
             background: `linear-gradient(
               to bottom,
-              hsl(24 95% 55% / 0.7) 0%,
-              hsl(24 95% 50% / 0.45) 25%,
-              hsl(24 95% 45% / 0.18) 55%,
+               hsl(var(--primary) / 0.5) 0%,
+               hsl(var(--primary) / 0.3) 25%,
+               hsl(var(--accent) / 0.12) 55%,
               transparent 100%
             )`,
             filter: 'blur(35px)',
@@ -70,9 +70,9 @@ const HeroLightRays = () => {
             transform: `translateX(-50%) rotate(12deg) translateY(${scrollOffset * 0.35}px)`,
             background: `linear-gradient(
               to bottom,
-              hsl(24 95% 52% / 0.65) 0%,
-              hsl(24 95% 48% / 0.4) 28%,
-              hsl(24 95% 42% / 0.15) 58%,
+               hsl(var(--accent) / 0.48) 0%,
+               hsl(var(--primary) / 0.28) 28%,
+               hsl(var(--accent) / 0.1) 58%,
               transparent 100%
             )`,
             filter: 'blur(38px)',
@@ -88,9 +88,9 @@ const HeroLightRays = () => {
             transform: `translateX(-50%) rotate(-42deg) translateY(${scrollOffset * 0.4}px)`,
             background: `linear-gradient(
               to bottom,
-              hsl(24 95% 48% / 0.55) 0%,
-              hsl(24 95% 42% / 0.3) 35%,
-              hsl(24 95% 38% / 0.1) 65%,
+               hsl(var(--primary) / 0.36) 0%,
+               hsl(var(--accent) / 0.2) 35%,
+               hsl(var(--primary) / 0.08) 65%,
               transparent 100%
             )`,
             filter: 'blur(45px)',
@@ -106,9 +106,9 @@ const HeroLightRays = () => {
             transform: `translateX(-50%) rotate(35deg) translateY(${scrollOffset * 0.25}px)`,
             background: `linear-gradient(
               to bottom,
-              hsl(24 95% 50% / 0.58) 0%,
-              hsl(24 95% 44% / 0.32) 32%,
-              hsl(24 95% 40% / 0.12) 62%,
+               hsl(var(--accent) / 0.4) 0%,
+               hsl(var(--primary) / 0.22) 32%,
+               hsl(var(--accent) / 0.08) 62%,
               transparent 100%
             )`,
             filter: 'blur(42px)',
@@ -124,8 +124,8 @@ const HeroLightRays = () => {
             transform: `translateX(-50%) rotate(-58deg) translateY(${scrollOffset * 0.45}px)`,
             background: `linear-gradient(
               to bottom,
-              hsl(24 95% 45% / 0.45) 0%,
-              hsl(24 95% 40% / 0.22) 40%,
+               hsl(var(--primary) / 0.3) 0%,
+               hsl(var(--accent) / 0.14) 40%,
               transparent 80%
             )`,
             filter: 'blur(50px)',
@@ -140,9 +140,9 @@ const HeroLightRays = () => {
           transform: `translateX(-50%) translateY(${scrollOffset * 0.1}px)`,
           background: `radial-gradient(
             ellipse 70% 100% at 50% 0%,
-            hsl(24 95% 55% / 0.7) 0%,
-            hsl(24 95% 50% / 0.4) 30%,
-            hsl(24 95% 45% / 0.15) 60%,
+             hsl(var(--primary) / 0.5) 0%,
+             hsl(var(--accent) / 0.3) 30%,
+             hsl(var(--primary) / 0.1) 60%,
             transparent 100%
           )`,
           willChange: 'transform',
@@ -154,8 +154,8 @@ const HeroLightRays = () => {
         className="absolute inset-0 opacity-[0.12]"
         style={{
           backgroundImage: `
-            linear-gradient(hsl(24 40% 60% / 0.4) 1px, transparent 1px),
-            linear-gradient(90deg, hsl(24 40% 60% / 0.4) 1px, transparent 1px)
+             linear-gradient(hsl(var(--primary) / 0.18) 1px, transparent 1px),
+             linear-gradient(90deg, hsl(var(--primary) / 0.18) 1px, transparent 1px)
           `,
           backgroundSize: '50px 50px',
           backgroundPosition: `0 ${gridOffset}px`,

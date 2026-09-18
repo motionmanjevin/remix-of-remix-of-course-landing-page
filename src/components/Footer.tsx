@@ -1,6 +1,6 @@
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { footerNavLinks, legalLinks, socialLinks } from "@/config/navigation";
+import { footerNavLinks, legalLinks } from "@/config/navigation";
 import Logo from "@/components/Logo";
 
 const Footer = () => {
@@ -43,8 +43,7 @@ const Footer = () => {
               <Logo showText={true} size="md" />
             </div>
             <p className="text-muted-foreground/90 text-sm leading-relaxed max-w-sm">
-              The structured path to AI fluency. Join thousands of professionals 
-              mastering the skill that defines the next decade of work.
+              Intelligent bulky-waste reporting, collection and prediction for a cleaner, more responsive Bogotá.
             </p>
           </div>
 
@@ -79,25 +78,15 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Right Column - Social */}
+          {/* Right Column - Platform */}
           <div className="md:col-span-3 lg:col-span-3">
             <h4 className="text-xs font-semibold text-muted-foreground/90 uppercase tracking-wider mb-5">
-              Social Media
+              Platform
             </h4>
             <ul className="space-y-2">
-              {socialLinks.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground active:text-primary transition-all duration-200 py-1.5 touch-manipulation"
-                  >
-                    <span>{link.label}</span>
-                    <ArrowUpRight className="w-3 h-3 opacity-80 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-200" />
-                  </a>
-                </li>
-              ))}
+              <li className="text-sm leading-relaxed text-muted-foreground">Waste reports</li>
+              <li className="text-sm leading-relaxed text-muted-foreground">Collection requests</li>
+              <li className="text-sm leading-relaxed text-muted-foreground">AI prediction</li>
             </ul>
           </div>
         </div>
@@ -105,7 +94,7 @@ const Footer = () => {
           {/* Bottom Row - Copyright & Legal */}
           <div className="pt-8 border-t border-border/20 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
             <p className="text-xs text-muted-foreground/70">
-              © {new Date().getFullYear()} PromptMaster. All rights reserved.
+              © {new Date().getFullYear()} Punto Vivo. All rights reserved.
             </p>
             <div className="flex items-center gap-4">
               {legalLinks.map((link) => (

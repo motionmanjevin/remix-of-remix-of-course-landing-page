@@ -114,7 +114,7 @@ export default {
   		},
 		fontFamily: {
 			sans: [
-				'Funnel Sans',
+				'Manrope',
 				'ui-sans-serif',
 				'system-ui',
 				'-apple-system',
@@ -122,9 +122,9 @@ export default {
 				'sans-serif'
 			],
 			lora: [
-				'Lora',
-				'Georgia',
-				'serif'
+				'Sora',
+				'ui-sans-serif',
+				'system-ui'
 			]
 		}
 	}

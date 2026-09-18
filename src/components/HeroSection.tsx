@@ -1,101 +1,71 @@
-import { EnrollButton } from "@/components/EnrollButton";
-import CountdownTimer from "./CountdownTimer";
-import PromptLab from "./PromptLab";
 import HeroLightRays from "./HeroLightRays";
 import { useScrollParallax } from "@/hooks/use-parallax";
+import { ArrowDown, ArrowRight, BrainCircuit, Camera, Database, MapPin } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import logoAsset from "@/assets/punto-vivo-logo.png.asset.json";
 
 const HeroSection = () => {
   const headlineParallax = useScrollParallax(0.08);
   const subheadlineParallax = useScrollParallax(0.05);
 
   return (
-    <section className="relative min-h-screen flex flex-col">
-      {/* Light rays background - rendered first, behind everything */}
+    <section className="relative min-h-[94vh] flex flex-col overflow-hidden">
       <HeroLightRays />
-      
-      {/* Countdown Strip */}
-      <div 
-        className="relative z-10 pt-16 md:pt-20 opacity-0"
-        style={{ animation: 'heroFadeIn 0.6s ease-out 0.1s forwards' }}
-      >
-        <CountdownTimer />
-      </div>
-
-      {/* Hero Content */}
-      <div className="container mx-auto px-4 md:px-6 py-8 md:py-12 lg:py-16 relative z-10 flex-1 flex items-center">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Badge */}
+      <div className="container relative z-10 mx-auto flex flex-1 items-center px-4 pb-20 pt-28 md:px-6 md:pt-32">
+        <div className="mx-auto w-full max-w-6xl text-center">
+          <img src={logoAsset.url} alt="Punto Vivo" className="mx-auto mb-8 h-auto w-40 sm:w-52 opacity-0" style={{ animation: 'heroFadeIn 0.6s ease-out 0.1s forwards' }} />
           <div 
-            className="inline-flex items-center gap-2 bg-secondary/50 backdrop-blur-md rounded-full px-3 sm:px-4 py-1.5 mb-6 sm:mb-8 opacity-0"
+            className="mb-7 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-2 opacity-0 backdrop-blur-md"
             style={{ animation: 'heroFadeIn 0.6s ease-out 0.2s forwards' }}
           >
-            <span className="w-2 h-2 bg-primary rounded-full animate-pulse flex-shrink-0" aria-hidden="true" />
-            <span className="text-xs sm:text-sm text-foreground">
-              Next cohort starts February 1st
-            </span>
+            <span className="h-2 w-2 flex-shrink-0 animate-pulse rounded-full bg-primary" aria-hidden="true" />
+            <span className="font-mono text-[11px] uppercase text-foreground">Bogotá · Intelligent waste operations</span>
           </div>
-
-          {/* Main Headline */}
           <h1 
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-4 sm:mb-6 xl:text-6xl opacity-0"
+            className="mx-auto mb-6 max-w-5xl text-4xl font-extrabold leading-[1.03] opacity-0 sm:text-5xl md:text-7xl"
             style={{ 
               animation: 'heroFadeIn 0.7s ease-out 0.3s forwards',
               transform: `translateY(${headlineParallax}px)`,
             }}
           >
-            Master Prompt Engineering &
-            <br className="hidden sm:block" />
-            <span className="sm:hidden"> </span>
-            <span 
-              className="text-primary font-lora inline-block"
-              style={{
-                animation: 'subtleGlow 3s ease-in-out infinite',
-              }}
-            >
-              Supercharge
-            </span> your career.
+            Transforming Bogota, <span className="text-gradient-brand">Columbia</span> through bulky waste management
           </h1>
-
-          {/* Subheadline */}
           <p 
-            className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl sm:max-w-2xl mx-auto mb-8 sm:mb-12 opacity-0 px-2"
+            className="mx-auto mb-9 max-w-2xl px-2 text-base leading-relaxed text-muted-foreground opacity-0 sm:text-lg md:text-xl"
             style={{ 
               animation: 'heroFadeIn 0.6s ease-out 0.45s forwards',
               transform: `translateY(${subheadlineParallax}px)`,
             }}
           >
-            The only course that takes you from AI novice to expert.
+            One connected platform for reporting, classifying, dispatching and predicting bulky waste across the city.
           </p>
-
-          {/* Unified PromptLab */}
           <div 
-            className="mb-6 opacity-0"
-            style={{ animation: 'heroFadeIn 0.6s ease-out 0.55s forwards' }}
-          >
-            <PromptLab />
-          </div>
-
-          {/* Primary CTA */}
-          <div 
-            className="flex flex-col items-center space-y-6 mb-4 opacity-0"
+            className="mb-14 flex flex-col items-center justify-center gap-3 opacity-0 sm:flex-row"
             style={{ animation: 'heroFadeIn 0.6s ease-out 0.65s forwards' }}
           >
-            <EnrollButton size="lg" />
+            <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+              <a href="#system">Explore the system <ArrowRight /></a>
+            </Button>
+            <Button asChild size="lg" variant="outline"><a href="/contact">Partner with us</a></Button>
+          </div>
+          <div className="mx-auto grid max-w-4xl gap-px border border-border bg-border text-left opacity-0 sm:grid-cols-3" style={{ animation: 'heroFadeIn 0.6s ease-out 0.8s forwards' }}>
+            {[
+              [Camera, "847", "active city cameras"],
+              [BrainCircuit, "91.4%", "global AI precision"],
+              [Database, "3.2M", "historical records"],
+            ].map(([Icon, value, label]) => {
+              const StatIcon = Icon as typeof Camera;
+              return <div key={String(label)} className="flex items-center gap-4 bg-background/70 px-5 py-4 backdrop-blur-md">
+                <StatIcon className="h-5 w-5 text-primary" />
+                <div><div className="text-xl font-bold">{String(value)}</div><div className="font-mono text-[10px] uppercase text-muted-foreground">{String(label)}</div></div>
+              </div>;
+            })}
           </div>
         </div>
       </div>
+      <a href="#system" aria-label="View the Punto Vivo system" className="absolute bottom-5 left-1/2 z-10 -translate-x-1/2 text-muted-foreground transition-colors hover:text-primary"><ArrowDown className="h-5 w-5 animate-bounce" /></a>
 
       <style>{`
-        @keyframes subtleGlow {
-          0%, 100% { 
-            text-shadow: 0 0 0px hsl(var(--primary) / 0);
-            filter: brightness(1);
-          }
-          50% { 
-            text-shadow: 0 0 20px hsl(var(--primary) / 0.4);
-            filter: brightness(1.1);
-          }
-        }
         @keyframes heroFadeIn {
           from {
             opacity: 0;
