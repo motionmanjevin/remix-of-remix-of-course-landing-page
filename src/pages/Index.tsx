@@ -2,14 +2,9 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import CourseStructureSection from "@/components/CourseStructureSection";
-import ReviewsSection from "@/components/ReviewsSection";
-import PricingSection from "@/components/PricingSection";
-import WhyUsSection from "@/components/WhyUsSection";
-import FAQsSection from "@/components/FAQsSection";
-import FinalCTASection from "@/components/FinalCTASection";
 import Footer from "@/components/Footer";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { IntelligenceSection, OperationsSection, PartnershipSection, SystemSection, WorkflowSection } from "@/components/PuntoVivoSections";
 
 const Index = () => {
   const location = useLocation();
@@ -40,22 +35,19 @@ const Index = () => {
       <main>
         <HeroSection />
         <ScrollReveal>
-          <CourseStructureSection />
+          <SystemSection />
         </ScrollReveal>
         <ScrollReveal delay={100}>
-          <ReviewsSection />
+          <OperationsSection />
         </ScrollReveal>
         <ScrollReveal delay={100}>
-          <PricingSection />
+          <IntelligenceSection />
         </ScrollReveal>
         <ScrollReveal delay={100}>
-          <WhyUsSection />
+          <WorkflowSection />
         </ScrollReveal>
         <ScrollReveal delay={100}>
-          <FAQsSection />
-        </ScrollReveal>
-        <ScrollReveal delay={100}>
-          <FinalCTASection />
+          <PartnershipSection />
         </ScrollReveal>
       </main>
       <ScrollReveal delay={100}>

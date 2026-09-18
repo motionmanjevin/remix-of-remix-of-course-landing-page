@@ -16,11 +16,10 @@ export interface NavLink {
  * Order matters: this is the canonical order for navbar and footer
  */
 export const navLinks: NavLink[] = [
-  { label: "Curriculum", href: "#curriculum" },
-  { label: "Reviews", href: "#reviews" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "Why us", href: "#why-us" },
-  { label: "FAQs", href: "#faqs" },
+  { label: "System", href: "#system" },
+  { label: "Operations", href: "#operations" },
+  { label: "Intelligence", href: "#intelligence" },
+  { label: "Workflow", href: "#workflow" },
 ];
 
 /**

@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { EnrollButton } from "@/components/EnrollButton";
 import { navLinks } from "@/config/navigation";
-import { Menu, X } from "lucide-react";
+import { ArrowRight, Menu, X } from "lucide-react";
 import Logo from "@/components/Logo";
+import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -19,7 +19,7 @@ const Navbar = () => {
       // Debounce active section detection to prevent jitter
       if (scrollTimeout) clearTimeout(scrollTimeout);
       scrollTimeout = setTimeout(() => {
-        const sections = ["curriculum", "reviews", "pricing", "why-us", "faqs"];
+        const sections = ["system", "operations", "intelligence", "workflow"];
         const viewportHeight = window.innerHeight;
         const scrollPosition = window.scrollY;
 
@@ -139,11 +139,11 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="flex items-center space-x-4">
-            <EnrollButton className="hidden lg:flex" />
+            <Button asChild className="hidden lg:flex"><a href="/contact">Contact <ArrowRight /></a></Button>
 
             {/* Mobile Menu Button */}
             <button 
-              className="lg:hidden p-2 text-foreground touch-manipulation active:bg-secondary/30 rounded-lg transition-colors" 
+              className="lg:hidden p-2 text-foreground touch-manipulation active:bg-secondary/30 rounded-lg transition-colors"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={isMobileMenuOpen}
@@ -182,7 +182,7 @@ const Navbar = () => {
               );
             })}
             <div className="px-4 pt-3">
-              <EnrollButton fullWidth />
+              <Button asChild className="w-full"><a href="/contact">Contact <ArrowRight /></a></Button>
             </div>
           </nav>
         </div>
