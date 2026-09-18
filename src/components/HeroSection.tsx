@@ -28,7 +28,7 @@ const HeroSection = () => {
               transform: `translateY(${headlineParallax}px)`,
             }}
           >
-            Transforming Bogota, <span className="text-gradient-brand">Columbia</span> through bulky waste management
+            Integrated Smart <span className="text-gradient-brand">Bulky-Waste Management</span> for Bogotá
           </h1>
           <p 
             className="mx-auto mb-9 max-w-2xl px-2 text-base leading-relaxed text-muted-foreground opacity-0 sm:text-lg md:text-xl"
