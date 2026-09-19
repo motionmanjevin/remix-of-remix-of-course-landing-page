@@ -1,6 +1,6 @@
 import HeroLightRays from "./HeroLightRays";
 import { useScrollParallax } from "@/hooks/use-parallax";
-import { ArrowDown, ArrowRight, BrainCircuit, Camera, Database, MapPin } from "lucide-react";
+import { ArrowDown, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logoAsset from "@/assets/punto-vivo-logo.png.asset.json";
 import { useEffect, useState } from "react";
@@ -100,19 +100,6 @@ const HeroSection = () => {
               <a href="#system">Explore the system <ArrowRight /></a>
             </Button>
             <Button asChild size="lg" variant="outline"><a href="/contact">Partner with us</a></Button>
-          </div>
-          <div className="mx-auto grid max-w-4xl gap-px border border-border bg-border text-left opacity-0 sm:grid-cols-3" style={{ animation: 'heroFadeIn 0.6s ease-out 0.8s forwards' }}>
-            {[
-              [Camera, "847", "active city cameras"],
-              [BrainCircuit, "91.4%", "global AI precision"],
-              [Database, "3.2M", "historical records"],
-            ].map(([Icon, value, label]) => {
-              const StatIcon = Icon as typeof Camera;
-              return <div key={String(label)} className="flex items-center gap-4 bg-background/70 px-5 py-4 backdrop-blur-md">
-                <StatIcon className="h-5 w-5 text-primary" />
-                <div><div className="text-xl font-bold">{String(value)}</div><div className="font-mono text-[10px] uppercase text-muted-foreground">{String(label)}</div></div>
-              </div>;
-            })}
           </div>
         </div>
       </div>
