@@ -1,6 +1,6 @@
 import HeroLightRays from "./HeroLightRays";
 import { useScrollParallax } from "@/hooks/use-parallax";
-import { ArrowDown, ArrowRight, BrainCircuit, Camera, Database, MapPin } from "lucide-react";
+import { ArrowDown, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logoAsset from "@/assets/punto-vivo-logo.png.asset.json";
 import { useEffect, useState } from "react";
