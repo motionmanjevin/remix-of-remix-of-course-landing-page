@@ -101,19 +101,6 @@ const HeroSection = () => {
             </Button>
             <Button asChild size="lg" variant="outline"><a href="/contact">Partner with us</a></Button>
           </div>
-          <div className="mx-auto grid max-w-4xl gap-px border border-border bg-border text-left opacity-0 sm:grid-cols-3" style={{ animation: 'heroFadeIn 0.6s ease-out 0.8s forwards' }}>
-            {[
-              [Camera, "847", "active city cameras"],
-              [BrainCircuit, "91.4%", "global AI precision"],
-              [Database, "3.2M", "historical records"],
-            ].map(([Icon, value, label]) => {
-              const StatIcon = Icon as typeof Camera;
-              return <div key={String(label)} className="flex items-center gap-4 bg-background/70 px-5 py-4 backdrop-blur-md">
-                <StatIcon className="h-5 w-5 text-primary" />
-                <div><div className="text-xl font-bold">{String(value)}</div><div className="font-mono text-[10px] uppercase text-muted-foreground">{String(label)}</div></div>
-              </div>;
-            })}
-          </div>
         </div>
       </div>
       <a href="#system" aria-label="View the Punto Vivo system" className="absolute bottom-5 left-1/2 z-10 -translate-x-1/2 text-muted-foreground transition-colors hover:text-primary"><ArrowDown className="h-5 w-5 animate-bounce" /></a>
