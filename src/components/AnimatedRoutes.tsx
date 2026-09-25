@@ -7,6 +7,7 @@ import Contact from "@/pages/Contact";
 import TermsOfService from "@/pages/TermsOfService";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import NotFound from "@/pages/NotFound";
+import UaespDashboard from "@/pages/UaespDashboard";
 
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -48,6 +49,7 @@ const AnimatedRoutes = () => {
             </PageTransition>
           }
         />
+        <Route path="/uaesp" element={<PageTransition><UaespDashboard /></PageTransition>} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route
           path="*"
