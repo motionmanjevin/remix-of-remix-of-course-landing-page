@@ -20,7 +20,7 @@ interface Props {
   onSelect: (id: string) => void;
 }
 
-const generatorData: GeoJSON.FeatureCollection<GeoJSON.Point> = {
+const generatorData = {
   type: "FeatureCollection",
   features: wasteGenerators.map((site) => ({
     type: "Feature",
@@ -32,6 +32,11 @@ const generatorData: GeoJSON.FeatureCollection<GeoJSON.Point> = {
     geometry: { type: "Point", coordinates: site.coordinates },
   })),
 };
+
+interface GeneratorMapFeature {
+  geometry: { type: string; coordinates: number[] };
+  properties?: Record<string, unknown>;
+}
 
 const WorkerMap = ({ workers, selectedId, onSelect }: Props) => {
   const el = useRef<HTMLDivElement>(null);
@@ -76,7 +81,7 @@ const WorkerMap = ({ workers, selectedId, onSelect }: Props) => {
     currentMap.addControl(new mapboxgl.ScaleControl({ unit: "metric" }), "bottom-right");
 
     const showGeneratorPopup = (event: mapboxgl.MapMouseEvent & { features?: mapboxgl.MapboxGeoJSONFeature[] }) => {
-      const feature = event.features?.[0];
+      const feature = event.features?.[0] as unknown as GeneratorMapFeature | undefined;
       if (!feature || feature.geometry.type !== "Point") return;
       const coordinates = [...feature.geometry.coordinates] as [number, number];
       const name = String(feature.properties?.name ?? "Large waste generator");
@@ -95,7 +100,7 @@ const WorkerMap = ({ workers, selectedId, onSelect }: Props) => {
     };
 
     const openCluster = (event: mapboxgl.MapMouseEvent & { features?: mapboxgl.MapboxGeoJSONFeature[] }) => {
-      const feature = event.features?.[0];
+      const feature = event.features?.[0] as unknown as GeneratorMapFeature | undefined;
       const clusterId = feature?.properties?.cluster_id;
       if (typeof clusterId !== "number" || feature?.geometry.type !== "Point") return;
       const source = currentMap.getSource("waste-generators") as mapboxgl.GeoJSONSource | undefined;
