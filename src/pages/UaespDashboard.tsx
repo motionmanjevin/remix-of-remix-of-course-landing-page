@@ -116,11 +116,12 @@ const UaespDashboard = () => {
 
           {/* Map + detail */}
           <section className="space-y-4">
-            <div className="relative h-[460px] rounded-xl border border-border">
+            <div className="relative h-[520px] rounded-xl border border-border overflow-hidden">
               <WorkerMap workers={filtered} selectedId={selectedId} onSelect={setSelectedId} />
-              <div className="absolute bottom-3 left-3 rounded-lg bg-card/90 border border-border px-3 py-2 text-[11px] space-y-1">
+              <div className="absolute bottom-3 left-3 rounded-lg bg-card/90 border border-border px-3 py-2 text-[11px] space-y-1 backdrop-blur">
                 <div className="flex items-center gap-2"><span className="w-2.5 h-2.5 rounded-full bg-accent" /> Active worker</div>
                 <div className="flex items-center gap-2"><span className="w-2.5 h-2.5 rounded-full bg-muted-foreground" /> Break / off duty</div>
+                <div className="flex items-center gap-2"><span className="w-2.5 h-2.5 rounded-full bg-chart-3 border border-foreground" /> Large waste generator</div>
                 <div className="flex items-center gap-2"><span className="w-4 border-t-2 border-dashed border-primary" /> Route to destination</div>
               </div>
             </div>
