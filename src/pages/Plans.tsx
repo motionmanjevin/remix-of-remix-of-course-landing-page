@@ -35,7 +35,7 @@ const plans = [
   {
     icon: Users,
     name: "Punto Vivo Community",
-    price: "$50–100",
+    price: "$0–50",
     period: "/month",
     tagline: "For smaller residential & community users",
     features: [
@@ -51,7 +51,7 @@ const plans = [
   {
     icon: Briefcase,
     name: "Punto Vivo Business",
-    price: "$150–300",
+    price: "$100–200",
     period: "/month",
     tagline: "For businesses & property managers",
     features: [
@@ -69,7 +69,7 @@ const plans = [
   {
     icon: Landmark,
     name: "Punto Vivo Enterprise",
-    price: "$500–1,500+",
+    price: "$300+",
     period: "/month",
     tagline: "For larger organisations",
     features: [
