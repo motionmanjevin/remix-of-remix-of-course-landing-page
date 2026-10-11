@@ -51,6 +51,7 @@ const AnimatedRoutes = () => {
           }
         />
         <Route path="/uaesp" element={<PageTransition><UaespDashboard /></PageTransition>} />
+        <Route path="/plans" element={<PageTransition><Plans /></PageTransition>} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route
           path="*"
