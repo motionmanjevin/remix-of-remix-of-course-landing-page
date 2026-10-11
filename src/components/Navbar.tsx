@@ -139,6 +139,7 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="flex items-center space-x-4">
+            <Button asChild variant="ghost" className="hidden lg:flex"><a href="/plans">Plans</a></Button>
             <Button asChild variant="outline" className="hidden lg:flex"><a href="/uaesp">UAESP Dashboard</a></Button>
             <Button asChild className="hidden lg:flex"><a href="/contact">Contact <ArrowRight /></a></Button>
 
