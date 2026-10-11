@@ -8,6 +8,7 @@ import TermsOfService from "@/pages/TermsOfService";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import NotFound from "@/pages/NotFound";
 import UaespDashboard from "@/pages/UaespDashboard";
+import Plans from "@/pages/Plans";
 
 const AnimatedRoutes = () => {
   const location = useLocation();
