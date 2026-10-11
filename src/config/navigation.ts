@@ -26,6 +26,7 @@ export const navLinks: NavLink[] = [
  * Footer-only links that appear after primary navigation
  */
 export const footerExtraLinks: NavLink[] = [
+  { label: "Plans", href: "/plans", isRoute: true },
   { label: "Contact", href: "/contact", isRoute: true },
 ];
 
