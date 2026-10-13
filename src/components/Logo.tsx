@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import logoAsset from "@/assets/punto-vivo-logo.png.asset.json";
+import logoUrl from "@/assets/punto-vivo-logo.png";
 
 interface LogoProps {
   showText?: boolean;
@@ -18,7 +18,7 @@ const Logo = ({ showText = true, size = "md", className }: LogoProps) => {
 
   return (
     <div className={cn("flex items-center gap-2.5 group/logo", className)}>
-      <img src={logoAsset.url} alt="" className={cn("flex-shrink-0 object-contain object-top", iconSize)} aria-hidden="true" />
+      <img src={logoUrl} alt="" className={cn("flex-shrink-0 object-contain object-top", iconSize)} aria-hidden="true" />
 
       {/* Wordmark - clean, upright, confident */}
       {showText && (

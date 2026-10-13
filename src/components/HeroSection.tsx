@@ -2,7 +2,7 @@ import HeroLightRays from "./HeroLightRays";
 import { useScrollParallax } from "@/hooks/use-parallax";
 import { ArrowDown, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoAsset from "@/assets/punto-vivo-logo.png.asset.json";
+import logoUrl from "@/assets/punto-vivo-logo.png";
 import { useEffect, useState } from "react";
 
 const HEADLINE_SEGMENTS: { text: string; gradient: boolean }[] = [
@@ -72,7 +72,7 @@ const HeroSection = () => {
       <HeroLightRays />
       <div className="container relative z-10 mx-auto flex flex-1 items-center px-4 pb-20 pt-28 md:px-6 md:pt-32">
         <div className="mx-auto w-full max-w-6xl text-center">
-          <img src={logoAsset.url} alt="Punto Vivo" className="mx-auto mb-8 h-auto w-40 sm:w-52 opacity-0" style={{ animation: 'heroFadeIn 0.6s ease-out 0.1s forwards' }} />
+          <img src={logoUrl} alt="Punto Vivo" className="mx-auto mb-8 h-auto w-40 sm:w-52 opacity-0" style={{ animation: 'heroFadeIn 0.6s ease-out 0.1s forwards' }} />
           <div 
             className="mb-7 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-2 opacity-0 backdrop-blur-md"
             style={{ animation: 'heroFadeIn 0.6s ease-out 0.2s forwards' }}
